@@ -6,8 +6,6 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
-use Carbon\Carbon;
 class AlbumSeeder extends Seeder
 {
     /**
@@ -18,29 +16,29 @@ class AlbumSeeder extends Seeder
     public function run()
     {
         DB::table('albums')->insert([
-            'name' => Str::random(10),
+            'name' => 'sap',
             'year' => '2003',
             'times_sold' => '2003',
+            'band_id' => '1',
         ]);
         DB::table('albums')->insert([
-            'name' => Str::random(10),
+            'name' => 'trap',
             'year' => '2003',
             'times_sold' => '20043',
+            'band_id' => '2',
         ]);
         DB::table('albums')->insert([
-            'name' => Str::random(10),
+            'name' => 'trick',
             'year' => '2003',
             'times_sold' => '20034',
+            'band_id' => '3',
         ]);
         DB::table('albums')->insert([
-            'name' => Str::random(10),
+            'name' => 'lop',
             'year' => '2000',
             'times_sold' => '20034',
+            'band_id' => '1',
         ]);
-        DB::table('albums')->insert([
-            'name' => Str::random(10),
-            'year' => '2003',
-            'times_sold' => '20034',
-        ]);
+
     }
 }

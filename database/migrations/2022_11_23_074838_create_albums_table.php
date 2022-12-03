@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('name')->nullable(false);
             $table->integer('year')->nullable(false);
             $table->integer('times_sold')->nullable(false);
+            $table->unsignedBigInteger('band_id');
+            $table->foreign('band_id')->references('id')->on('bands')->onDelete('cascade');
         });
     }
 

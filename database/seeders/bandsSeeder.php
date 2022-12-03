@@ -18,25 +18,25 @@ class bandsSeeder extends Seeder
     public function run()
     {
         DB::table('bands')->insert([
-            'name' => Str::random(10),
-            'genre' => Str::random(10),
+            'name' => 'water',
+            'genre' => 'rap',
             'founded' => '2003',
             'created_at'=> Carbon::now(),
             'updated_at'=> Carbon::now()
 
         ]);
         DB::table('bands')->insert([
-            'name' => Str::random(10),
-            'genre' => Str::random(10),
-            'founded' => '2004',
+            'name' => 'aap',
+            'genre' => 'rap',
+            'founded' => '2003',
             'created_at'=> Carbon::now(),
             'updated_at'=> Carbon::now()
 
         ]);
         DB::table('bands')->insert([
-            'name' => Str::random(10),
-            'genre' => Str::random(10),
-            'founded' => '2006',
+            'name' => 'aarde',
+            'genre' => 'rap',
+            'founded' => '2003',
             'created_at'=> Carbon::now(),
             'updated_at'=> Carbon::now()
 
