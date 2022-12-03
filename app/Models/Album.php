@@ -10,11 +10,12 @@ class Album extends Model
     use HasFactory;
     public $timestamps = false;
     protected $table = 'albums';
-    protected $fillable = [
-        'name',
-        'year',
-        'times_sold',
-
-    ];
+    protected $fillable = [];
     protected $guarded = ['*', 'album'];
+    public function Band(){
+        return $this->belongsTo(Band::class);
+    }
+    public function songs(){
+        return $this->belongsToMany(Song::class);
+    }
 }
