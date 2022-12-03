@@ -17,33 +17,64 @@ class SongsTableSeeder extends Seeder
     public function run()
     {
         DB::table('songs')->insert([
-            'title' => Str::random(10),
-            'singer' => Str::random(10),
+            'title' => 'water',
+            'singer' => 'ak',
             'created_at'=> Carbon::now(),
             'updated_at'=> Carbon::now()
 
         ]);
         DB::table('songs')->insert([
-            'title' => Str::random(10),
-            'singer' => Str::random(10),
+            'title' => 'aarde',
+            'singer' => 'ak',
+            'created_at'=> Carbon::now(),
+            'updated_at'=> Carbon::now()
+
+        ]);
+
+        DB::table('songs')->insert([
+            'title' => 'vuur',
+            'singer' => 'ak',
             'created_at'=> Carbon::now(),
             'updated_at'=> Carbon::now()
 
         ]);
         DB::table('songs')->insert([
-            'title' => Str::random(10),
-            'singer' => Str::random(10),
+            'title' => 'lucht',
+            'singer' => 'ak',
             'created_at'=> Carbon::now(),
             'updated_at'=> Carbon::now()
 
         ]);
         DB::table('songs')->insert([
-            'title' => Str::random(10),
-            'singer' => Str::random(10),
+            'title' => 'elem',
+            'singer' => 'ak',
             'created_at'=> Carbon::now(),
             'updated_at'=> Carbon::now()
 
         ]);
+        DB::table('songs')->insert([
+            'title' => 'ent',
+            'singer' => 'ak',
+            'created_at'=> Carbon::now(),
+            'updated_at'=> Carbon::now()
+
+        ]);
+        DB::table('songs')->insert([
+            'title' => 'en',
+            'singer' => 'ak',
+            'created_at'=> Carbon::now(),
+            'updated_at'=> Carbon::now()
+
+        ]);
+        DB::table('songs')->insert([
+            'title' => 'vrede',
+            'singer' => 'ak',
+            'created_at'=> Carbon::now(),
+            'updated_at'=> Carbon::now()
+
+        ]);
+
+
     }
 
 }

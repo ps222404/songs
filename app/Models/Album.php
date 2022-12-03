@@ -12,7 +12,7 @@ class Album extends Model
     protected $table = 'albums';
     protected $fillable = [];
     protected $guarded = ['*', 'album'];
-    public function Band(){
+    public function band(){
         return $this->belongsTo(Band::class);
     }
     public function songs(){

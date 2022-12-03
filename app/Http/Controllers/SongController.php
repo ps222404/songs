@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Song;
+use App\Models\Album;
 use Illuminate\Http\Request;
 
 
@@ -15,7 +16,6 @@ class SongController extends Controller
 
     public function show($id)
     {
-
         return view('songs.show', ['song' => Song::find($id) ]);
 
     }
@@ -46,13 +46,18 @@ class SongController extends Controller
     }
     public function edit($id)
     {
-        return view('songs.edit', ['song' => Song::find($id) ]);
+        return view('songs.edit', ['song' => Song::find($id), 'albums' => Album::all()]);
 
+    }
+    public function storealbum(Request $request, $id)
+    {
+        $song = Song::find($id);
+        $song->album()->attach($request->input('album_id'));
+        return redirect()->route('songs.index');
     }
     public function destroy($id){
         Song::destroy($id);
         return redirect()->route('songs.index');
-
     }
 }
 

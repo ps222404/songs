@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Band;
+use App\Models\Album;
 use Illuminate\Http\Request;
 
 class BandController extends Controller
@@ -56,7 +57,7 @@ class BandController extends Controller
     public function show($band)
     {
 
-        return view('bands.show', ['bands' => Band::find($band) ]);
+        return view('bands.show', ['bands' => Band::find($band), 'albums' => Band::find($band)->albums  ]);
     }
 
     /**

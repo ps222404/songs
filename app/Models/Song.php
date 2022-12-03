@@ -14,8 +14,9 @@ class Song extends Model
      * @var array<string>
      */
     protected $fillable = [];
+    protected $table = 'songs';
     protected $guarded = ['*', 'id'];
     public function album(){
-        return $this->belongsToMany(Album::class);
+        return $this->belongsTomany(Album::class);
     }
 }

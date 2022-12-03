@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Album;
+use App\Models\Band;
+use App\Models\Song;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class AlbumController extends Controller
 {
@@ -53,7 +56,7 @@ class AlbumController extends Controller
      */
     public function show($album)
     {
-        return view('albums.show', ['albums' => Album::find($album) ]);
+        return view('albums.show', ['albums' => Album::find($album)]);
     }
 
     /**
@@ -64,7 +67,12 @@ class AlbumController extends Controller
      */
     public function edit($album)
     {
-        return view('albums.edit', ['albums' => Album::find($album) ]);
+        $filter = [];
+        $albums = Album::find($album);
+        foreach($albums->songs as $song){
+            array_push($filter,$song->id);
+        }
+        return view('albums.edit', ['albums' => Album::find($album),'songs' => Song::all()->except($filter)]);
     }
 
     /**
@@ -85,6 +93,12 @@ class AlbumController extends Controller
         ]);
 
         Album::find($album)->update($request->except(['id', '_token']));
+        return redirect()->route('albums.index');
+    }
+    public function storesongs(Request $request, $album_id)
+    {
+        $album = Album::find($album_id);
+        $album->songs()->attach($request->input('song_id'));
         return redirect()->route('albums.index');
     }
 

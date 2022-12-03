@@ -15,21 +15,37 @@ class AlbumSongSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('album_songs')->insert([
+        DB::table('album_song')->insert([
             'album_id' => '1',
             'song_id' => '1',
         ]);
-        DB::table('album_songs')->insert([
+        DB::table('album_song')->insert([
             'album_id' => '2',
             'song_id' => '2',
         ]);
-        DB::table('album_songs')->insert([
+        DB::table('album_song')->insert([
             'album_id' => '3',
             'song_id' => '3',
         ]);
-        DB::table('album_songs')->insert([
+        DB::table('album_song')->insert([
             'album_id' => '4',
             'song_id' => '4',
+        ]);
+        DB::table('album_song')->insert([
+            'album_id' => '1',
+            'song_id' => '5',
+        ]);
+        DB::table('album_song')->insert([
+            'album_id' => '2',
+            'song_id' => '6',
+        ]);
+        DB::table('album_song')->insert([
+            'album_id' => '3',
+            'song_id' => '7',
+        ]);
+        DB::table('album_song')->insert([
+            'album_id' => '4',
+            'song_id' => '8',
         ]);
     }
 }

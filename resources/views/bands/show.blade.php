@@ -19,6 +19,8 @@
     <p><b class="font-bold">active till:</b> {{$bands->active_till}} </p>
     <p><b class="font-bold">created at:</b> {{$bands->created_at}}</p>
     <p><b class="font-bold">update at:</b> {{$bands->updated_at}}</p>
+    <p class="font-bold"><b>Albums:</b>@foreach ($bands->albums as $album){{ $album->name }} @endforeach</p>
+
 </div>
 </body>
 </html>

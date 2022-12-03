@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('album_songs', function (Blueprint $table) {
+        Schema::create('album_song', function (Blueprint $table) {
             $table->unsignedBigInteger('album_id');
             $table->foreign('album_id')->references('id')->on('albums')->onDelete('cascade');
             $table->unsignedBigInteger('song_id');
             $table->foreign('song_id')->references('id')->on('songs')->onDelete('cascade');
+            $table->primary(['album_id', 'song_id']);
         });
+
     }
 
     /**

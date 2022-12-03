@@ -14,6 +14,7 @@ Route::post('/songs', [SongController::class, 'store'])->Name('songs.store');
 Route::get('/songs/{id}/edit', [SongController::class, 'edit'])->Name('songs.edit');
 Route::put('/songs/{id}', [SongController::class, 'update'])->Name('songs.update');
 Route::delete('/songs/{id}', [SongController::class,'destroy'])->Name('songs.destroy');
+Route::patch('/songs/{id}/albums', [SongController::class, 'storealbum'])->name('songs.storealbum');
 
 /*** bands ***/
 Route::resource('bands', BandController::class);
@@ -35,4 +36,5 @@ Route::get('/albums/{album}', [AlbumController::class, 'show'])->name('albums.sh
 Route::put('/albums/{album}', [AlbumController::class, 'update'])->name('albums.update');
 Route::get('/albums/{album}/edit', [AlbumController::class, 'edit'])->name('albums.edit');
 Route::delete('/albums/{album}', [AlbumController::class, 'destroy'])->name('albums.destroy');
+Route::patch('/albums/{song_id}/songs', [AlbumController::class, 'storesongs'])->name('albums.storesongs');
 
